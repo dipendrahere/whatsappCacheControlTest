@@ -3,10 +3,6 @@ var path = require('path')
 var serveStatic = require('serve-static')
 
 var app = express()
-app.use(function(req, res){
-  console.log("first");
-  console.log(JSON.stringify(req.headers))
-});
 app.use(serveStatic(path.join(__dirname, 'public'), {
   setHeaders: setCustomCacheControl
 }));
