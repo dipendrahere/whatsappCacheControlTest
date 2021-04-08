@@ -12,7 +12,7 @@ app.use(serveStatic(path.join(__dirname, 'public'), {
 }));
 
 
-app.listen(3000)
+app.listen(process.env.PORT || 2000)
 
 function setCustomCacheControl (res, path) {
   if (serveStatic.mime.lookup(path) === 'text/html') {
